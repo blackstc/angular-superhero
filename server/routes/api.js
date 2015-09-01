@@ -18,27 +18,7 @@ router.post('/superheros', function(req, res) {
   });
 });
 
-
-// router.get('/superhero/:id', function(req, res) {
-//   var query = {"_id": req.params.id};
-//   Superhero.findOne(query, function(err, superhero){
-//     res.render(
-//       'superhero',
-//       {title : 'Superhero API - ' + superhero.name, superhero : superhero}
-//     );
-//   });
-// });
-
-
-// router.put('/superhero/:id', function(req, res) {
-//   var query = {"_id": req.params.id};
-//   var update = {name : req.body.name};
-//   var options = {new: true};
-//   Superhero.findOneAndUpdate(query, update, options, function(err, superhero){
-//     res.json(superhero);
-//   });
-// });
-
+// delete for single superhero
 router.delete('/superhero/:id', function(req, res) {
   var query = {"_id": req.params.id};
   Superhero.findOneAndRemove(query, function(err, superhero){
