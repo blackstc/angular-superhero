@@ -4,7 +4,7 @@
   <form name="addForm">
     <div class="form-group">
       <label><h3>Superhero Name</h3></label>
-      <input type="text" class="form-control" ng-model="newSuperhero.name" placeholder="Superhero Name">
+      <input type="text" id="first" class="form-control" ng-model="newSuperhero.name" placeholder="Superhero Name">
       <label><h3>Superhero Ability</h3></label>
       <input type="text" class="form-control" ng-model="newSuperhero.ability" placeholder="Superhero Abilty">
       <label><h3>Superhero Nemesis</h3></label>
@@ -16,27 +16,26 @@
   <hr><br>
 
   <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Ability</th>
-              <th>Nemesis</th>
-              <th>Options</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="superhero in superheros">
-                <td> {{ superhero.name }} </td>
-                <td> {{ superhero.ability }} </td>
-                <td> {{ superhero.nemesis }} </td>
-                <td>
-                  <button type="button" name="edit-button" class="btn btn-success btn-xs">Edit</button>
-                  <button type="button" name="delete-button" class="btn btn-danger btn-xs">X</button>
-                </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Ability</th>
+          <th>Nemesis</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="superhero in superheros">
+          <td> {{ superhero.name }} </td>
+          <td> {{ superhero.ability }} </td>
+          <td> {{ superhero.nemesis }} </td>
+          <td>
+            <button type="button" name="edit-button" ng-click="editSuperhero()" class="btn btn-success btn-xs">Edit</button>
+            <button type="button" name="delete-button" ng-click="deleteSuperhero()" class="btn btn-danger btn-xs">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
