@@ -3,22 +3,23 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Superhero = mongoose.model('superheros');
 
-router.get('/superheros', function(req, res) {
+router.get('/', function(req, res) {
   Superhero.find(function(err, superheros){
-    console.log(superheros);
-    res.render(
-      'api',
-      {title : 'Superhero API', superheros : superheros}
-    );
+    // console.log(superheros);
+    res.json(superheros);
   });
 });
 
-router.post('/superheros', function(req, res) {
-  new Superhero({name : req.body.name})
+// post ALL superheros
+router.post('/', function(req, res) {
+  // new Superhero({name: req.body.superheroName})
+  new Superhero(req.body.name)
   .save(function(err, superhero) {
-    res.redirect('/api/superheros');
+    // console.log(superhero);
+    res.json({message: 'Success!'});
   });
 });
+
 
 router.get('/superhero/:id', function(req, res) {
   var query = {"_id": req.params.id};

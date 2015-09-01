@@ -8,5 +8,3 @@ myApp.config(function($routeProvider) {
       controller: 'addSuperheroController'
     });
 });
-
-console.log("hi");

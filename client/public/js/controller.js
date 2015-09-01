@@ -1,4 +1,4 @@
-angular.module("myApp").controller("addSuperheroController", ["$scope",  function($scope) {
+angular.module("myApp").controller("addSuperheroController", ["$scope", "$http", function($scope, $http) {
 
   $scope.superheros = [
     {name: 'batman'},
@@ -7,6 +7,12 @@ angular.module("myApp").controller("addSuperheroController", ["$scope",  functio
   ];
 
   $scope.addSuperhero = function() {
-    $scope.superheros.push({name: $scope.newSuperhero.name});
+    var payload = {
+      name: $scope.newSuperhero.name
+    };
+    $http.post('/', payload)
+      .success(function(data) {
+      console.log(data);
+    });
   };
 }]);
