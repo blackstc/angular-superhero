@@ -4,12 +4,15 @@
   <form>
     <div class="form-group">
       <label><h3>Superhero Name</h3></label>
-      <input type="text" class="form-control" id="inputData.name" placeholder="Superhero Name">
+      <input type="text" class="form-control" ng-model="newSuperhero.name" placeholder="Superhero Name">
     </div>
-    <button type="submit" class="btn btn-primary" ng-click="addSuperhero()">Save</button>
+    <button type="button" class="btn btn-primary" ng-click="addSuperhero()">Save Superhero</button>
   </form>
 
   <hr><br>
 
   <h2>All Superheros</h2>
+    <ul>
+      <li ng-repeat="superhero in superheros">{{ superhero.name }}</li>
+    </ul>
 </div>

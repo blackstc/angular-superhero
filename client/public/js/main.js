@@ -4,7 +4,8 @@ angular.module('myModule', ['ui.bootstrap']);
 myApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '../views/api.html'
+      templateUrl: '../views/api.html',
+      controller: 'addSuperheroController'
     });
 });
 
