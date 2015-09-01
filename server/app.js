@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 
 // *** routes *** //
-var routes = require('./routes/index.js');
+var apiRoutes = require('./routes/api.js');
 
 
 // *** express instance *** //
@@ -35,10 +35,10 @@ app.use(express.static(path.join(__dirname, '../client/')));
 
 
 // *** main routes *** //
-// app.use('/', routes);
 app.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../client/views/', 'index.html'));
 });
+app.use('/api/v1', apiRoutes);
 
 
 // catch 404 and forward to error handler
