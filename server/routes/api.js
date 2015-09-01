@@ -1,24 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-// var Superhero = mongoose.model('superheros');
+var Superhero = require('../database');
 
-// router.get('/', function(req, res) {
-//   Superhero.find(function(err, superheros){
-//     // console.log(superheros);
-//     res.json(superheros);
-//   });
-// });
+// get ALL superheros
+router.get('/superheros', function(req, res) {
+  Superhero.find(function(err, superheros){
+    console.log(superheros);
+    res.json(superheros);
+  });
+});
 
 // post ALL superheros
 router.post('/superheros', function(req, res) {
-  console.log('hi');
-  // new Superhero({name: req.body.superheroName})
-  // new Superhero(req.body.name)
-  // .save(function(err, superhero) {
-  //   // console.log(superhero);
-  //   res.json({message: 'Success!'});
-  // });
+  new Superhero(req.body)
+  .save(function(err, superhero) {
+    console.log(superhero);
+    res.json({message: 'Success!'});
+  });
 });
 
 

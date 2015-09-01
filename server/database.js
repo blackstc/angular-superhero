@@ -9,6 +9,6 @@ var Superhero = new Schema(
   }
 );
 
-mongoose.model('superheros', Superhero);
+module.exports = mongoose.model('superheros', Superhero);
 
 mongoose.connect('mongodb://localhost/node-superhero');
