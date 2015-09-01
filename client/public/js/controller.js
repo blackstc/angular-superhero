@@ -26,8 +26,18 @@ function($scope, $http) {
     var id = this.superhero._id;
     $http.delete('api/v1/superhero/' + id)
     .success(function(data) {
-      console.log(data);
       $scope.getSuperheros();
+    });
+  };
+
+  $scope.editSuperhero = function() {
+    var id = this.superhero._id;
+    $scope.newSuperhero.name = this.superhero.name;
+    $scope.newSuperhero.ability = this.superhero.ability;
+    $scope.newSuperhero.nemesis = this.superhero.nemesis;
+    $("#first").focus();
+    $http.delete('api/v1/superhero/' + id)
+    .success(function(data) {
     });
   };
 }]);
