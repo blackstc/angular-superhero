@@ -14,7 +14,9 @@
   </form>
 
   <hr><br>
-
+  <h4>Filter by Name:</h4>
+  <input type="text" ng-model='nameText'>
+  <br>
   <div>
     <table class="table">
       <thead>
@@ -26,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="superhero in superheros">
+        <tr ng-repeat="superhero in superheros | filter:nameText">
           <td> {{ superhero.name }} </td>
           <td> {{ superhero.ability }} </td>
           <td> {{ superhero.nemesis }} </td>
