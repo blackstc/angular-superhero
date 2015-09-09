@@ -13,5 +13,4 @@ module.exports = mongoose.model('superheros', Superhero);
 
 // mongoose.connect('mongodb://localhost/node-superhero');
 
-
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://heroku_zd85p5cz:3qgm1udb8ttpqk1bfd7b78q0hh@ds035563.mongolab.com:35563/heroku_zd85p5cz")
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/node-superhero");
